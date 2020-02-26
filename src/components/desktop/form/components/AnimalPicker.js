@@ -18,13 +18,34 @@ const AnimalPicker = () => {
     const options = getOptions();
     const animals = getAnimals();
 
-    console.log('options: ', options);
-
     const [selectedAnimals, setSelectedAnimals] = useState([]);
+    const [isTigerPicked, setIsTigerPicked] = useState(false);
 
     const animalsClassName = classNames({
         error: selectedAnimals.length <= 1,
     });
+
+    function getTigerType() {
+        if (!isTigerPicked) {
+            return null;
+        }
+
+        return (
+            <p>
+                <Label
+                  className='label'
+                  labelFor='tiger_type'
+                >
+                    Type of tiger
+                </Label>
+                <Input
+                  type='text'
+                  name='tiger_type'
+                  id='tiger_type'
+                />
+            </p>
+        );
+    }
 
     return (
         <fieldset>
@@ -34,46 +55,31 @@ const AnimalPicker = () => {
                     <span className='label'>
                         Animal
                     </span>
-                    <Input
-                      type='checkbox'
-                      name='animal'
-                      value='bear'
-                      id='bear'
-                    />
-                </p>
-                <p>
                     {animals.map(({ name, value, id, labelFor, message }) => (
                         <>
+                            <Label
+                              labelFor={labelFor}
+                              message={message}
+                            />
                             <Input
                               className={animalsClassName}
                               type='checkbox'
                               name={name}
                               value={value}
                               id={id}
-                              onChange={() => {
-                                setSelectedAnimals([...selectedAnimals, name]);
+                              onCheckBoxSelect={(animalName) => {
+                                setSelectedAnimals([...selectedAnimals, animalName]);
+                                if (animalName.toLowerCase() === 'tiger') {
+                                    setIsTigerPicked(true);
+                                }
                                 setAllowSubmission(selectedAnimals.length >= 2);
                               }}
                             />
-                            <Label labelFor={labelFor}>
-                                {message}
-                            </Label>
+
                         </>
                     ))}
                 </p>
-                <p>
-                    <Label
-                      className='label'
-                      labelFor='tiger_type'
-                    >
-                        Type of tiger
-                    </Label>
-                    <Input
-                      type='text'
-                      name='tiger_type'
-                      id='tiger_type'
-                    />
-                </p>
+                {getTigerType()}
         </fieldset>
     );
 };

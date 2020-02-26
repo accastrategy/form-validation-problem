@@ -15,8 +15,6 @@ class Stage extends React.Component {
     }
 
     render() {
-        console.log('MainComponent: ', MainComponent);
-
         return (
             <div>
                 <Suspense fallback={<div />}>

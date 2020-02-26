@@ -16,13 +16,9 @@ const Details = () => {
     error: !isEmailValid,
   });
 
-  console.log('emailClassName: ', emailClassName);
-
   const passwordClassName = classNames({
     error: !isPasswordValid,
   });
-
-  console.log('passwordClassName: ', passwordClassName);
 
   function getEmailInput() {
     return (
@@ -40,8 +36,6 @@ const Details = () => {
   }
 
   useEffect(() => {
-    console.log('useEffect isEmailValid && isPasswordValid: ', isEmailValid && isPasswordValid);
-
     setAllowSubmission(isEmailValid && isPasswordValid);
   }, [isEmailValid, isPasswordValid]);
 

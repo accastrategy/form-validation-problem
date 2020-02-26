@@ -11,8 +11,6 @@ const Form = () => {
 
     const providerAllowSubmission = useMemo(() => ({ allowSubmission, setAllowSubmission }), [allowSubmission, setAllowSubmission]);
 
-    console.log('Form');
-
     return (
         <AllowSubmissionContext.Provider
           value={providerAllowSubmission}

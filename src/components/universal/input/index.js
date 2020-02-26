@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const Input = ({ type, className = '', value = '', id, dataAuto, onTextChange = null }) => {
+const Input = ({ type, className = '', value = '', id, dataAuto, onTextChange = null, onCheckBoxSelect = null }) => {
     const [inputValue, setInputValue] = useState(value);
 
-    function handleInputChange(eventKey) {
+    function handleChange(eventKey) {
         setInputValue(eventKey.target.value);
-        onTextChange && onTextChange(inputValue);
+        onTextChange && onTextChange(eventKey.target.value);
+        onCheckBoxSelect && onCheckBoxSelect(eventKey.target.value);
     }
 
     return (
@@ -16,7 +17,7 @@ const Input = ({ type, className = '', value = '', id, dataAuto, onTextChange = 
           name={name}
           data-auto={dataAuto}
           value={inputValue}
-          onChange={handleInputChange}
+          onChange={handleChange}
         />
     );
 };

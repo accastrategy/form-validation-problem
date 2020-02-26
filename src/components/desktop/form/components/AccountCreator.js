@@ -7,8 +7,6 @@ import AllowSubmissionContext from '../AllowSubmissionContext';
 const AccountCreator = () => {
     const { allowSubmission } = useContext(AllowSubmissionContext);
 
-    console.log('AccountCreator allowSubmission: ', allowSubmission);
-
     return (
         <fieldset>
             <p>
