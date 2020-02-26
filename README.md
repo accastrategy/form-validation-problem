@@ -43,3 +43,9 @@ Please email us a link to your fork of this repository, or a zip of your solutio
 ## Acknowledgements
 
 Thanks to [Springload](https://www.springload.co.nz/) for the original version of this test.
+
+
+# HOW TO RUN
+$ yarn install
+$ yarn run dev // wait for PostCSS to run
+$ yarn run dev:server:start // go to localhost:8070
