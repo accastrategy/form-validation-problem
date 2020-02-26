@@ -1,0 +1,123 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb"
+    ],
+    "globals": {
+        "src": true,
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "describe": false
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "jest",
+        "import",
+        "react-hooks"
+    ],
+    "rules": {
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "consistent-return": "off",
+        "object-curly-newline": "off",
+        "no-unused-expressions": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "react/forbid-prop-types": "off",
+        "react/prop-types": "off",
+        "react/no-array-index-key": "off",
+        "default-case": "off",
+        "no-restricted-globals":"off",
+        "no-console": 0,
+        "indent": 0,
+        "no-underscore-dangle": 0,
+        "prefer-template": 0,
+        "no-plusplus": 0,
+        "react/prefer-stateless-function": 0,
+        "react/sort-comp": 0,
+        "react/jsx-indent": 0,
+        "max-len": [
+            "error",
+            {
+                "code": 120,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreComments": true
+            }
+        ],
+        "no-prototype-builtins": 0,
+        "no-param-reassign": 0,
+        "no-eval": 0,
+        "id-length": [
+            "error",
+            {
+                "min": 2,
+                "exceptions": [
+                    "x",
+                    "y",
+                    "i",
+                    "j",
+                    "a",
+                    "b"
+                ]
+            }
+        ],
+        "class-methods-use-this": 0,
+        "camelcase": 0,
+        "max-statements": [
+            1,
+            20
+        ],
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": false
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        }
+    }
+}

@@ -1,1 +1,13 @@
-.idea
+/*.iml
+/.idea/
+/target/
+/output/
+/node_modules/
+/reports/
+/coverage/
+/dist/
+/cypress/screenshots/
+/cypress/results/
+cypress-results*.json
+test-report.html
+test-results.json
